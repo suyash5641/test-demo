@@ -26,19 +26,19 @@ jobs:
       - name: Run Tests
         run: npm test
 
-deploy:
-  needs: build
-  runs-on: ubuntu-latest
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Deploy to Vercel (Dev)
-      if: github.event_name == 'pull_request' && github.head_ref == 'dev'
-      run: curl -X POST -d {} ${{ secrets.DEV_DEPLOY_HOOK }}
+    steps:
+      - name: Deploy to Vercel (Dev)
+        if: github.event_name == 'pull_request' && github.head_ref == 'dev'
+        run: curl -X POST -d {} ${{ secrets.DEV_DEPLOY_HOOK }}
 
-    - name: Deploy to Vercel (Stage)
-      if: github.event_name == 'pull_request' && github.head_ref == 'stage'
-      run: curl -X POST -d {} ${{ secrets.STAGE_DEPLOY_HOOK }}
+      - name: Deploy to Vercel (Stage)
+        if: github.event_name == 'pull_request' && github.head_ref == 'stage'
+        run: curl -X POST -d {} ${{ secrets.STAGE_DEPLOY_HOOK }}
 
-    - name: Deploy to Vercel (Prod)
-      if: github.event_name == 'pull_request' && github.head_ref == 'main'
-      run: curl -X POST -d {} ${{ secrets.PROD_DEPLOY_HOOK }}
+      - name: Deploy to Vercel (Prod)
+        if: github.event_name == 'pull_request' && github.head_ref == 'main'
+        run: curl -X POST -d {} ${{ secrets.PROD_DEPLOY_HOOK }}
