@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <header className="App-header">
+      <header>
         <p>stage is ready deploy</p>
         <p>stage is ready deploy</p>
       </header>
