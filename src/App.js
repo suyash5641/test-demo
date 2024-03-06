@@ -3,9 +3,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
-        <p>dev deploy</p>
+        <p>stage is ready deploy</p>
+        <p>stage is ready deploy</p>
       </header>
     </div>
   );
