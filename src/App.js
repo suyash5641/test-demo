@@ -4,10 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <header>
-        <p>stage is ready deploy</p>
-        <p>stage is ready deploy</p>
-      </header>
+      <p>PRODUCTION DEPLOY TEST</p>
     </div>
   );
 }
